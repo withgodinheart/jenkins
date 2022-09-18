@@ -22,11 +22,6 @@ pipeline {
                sh "cp **/target/*.war /Users/C5320729/Documents/tomcat/webapps"
              }
            }
-           /*stage ('Deploy to prod') {
-             steps {
-               sh "cp **/target/*.war /home/ivan/programms/tomcat-prod/webapps"
-             }     
-           }*/
          }
        }
     }
