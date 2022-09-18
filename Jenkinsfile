@@ -1,9 +1,6 @@
 pipeline {
   agent any
-  triggers {
-    pollSCM('*/5 * * * *')
-  }
-  stages{
+  stages {
        stage ('Build'){
         steps {
           sh 'mvn clean package'
@@ -17,7 +14,7 @@ pipeline {
        }
        stage ('Deploy to Staging'){
          steps {
-           sh "cp **/target/*.war /Users/C5320729/Documents/tomcat/webapps"
+           build job: 'deploy_to_staging'
          }
        }
     }
