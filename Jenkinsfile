@@ -15,13 +15,9 @@ pipeline {
            }
          }
        }
-       stage ('Deployments') {
-         parallel{
-           stage ('Deploy to Staging'){
-             steps {
-               sh "cp **/target/*.war /Users/C5320729/Documents/tomcat/webapps"
-             }
-           }
+       stage ('Deploy to Staging'){
+         steps {
+           sh "cp **/target/*.war /Users/C5320729/Documents/tomcat/webapps"
          }
        }
     }
